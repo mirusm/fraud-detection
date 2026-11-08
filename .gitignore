@@ -1,2 +1,9 @@
-data/raw/
-data/processed/
+# Ignore all data files
+data/*
+
+# Keep directory structure
+!data/raw/
+!data/raw/.gitkeep
+
+# Python
+__pycache__/
