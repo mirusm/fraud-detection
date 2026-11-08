@@ -3,7 +3,7 @@ data/*
 
 # Keep directory structure
 !data/raw/
-!data/raw/.gitkeep
+!data/raw/README.md
 
 # Python
 __pycache__/
