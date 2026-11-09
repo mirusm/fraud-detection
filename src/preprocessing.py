@@ -1,3 +1,21 @@
+"""Transaction features and their potential relevance to fraud detection.
+
+- Temporal: hour, day_of_week, is_weekend and is_night capture time patterns.
+- Spending behavior: customer_avg_amt, customer_median_amt, amount_vs_avg and
+  amount_zscore compare transaction amounts with a card's past activity.
+- Transaction frequency: tx_count_1h, tx_count_24h and tx_count_7d capture
+  recent transaction counts.
+- Amounts over time: tx_amount_sum_24h and tx_amount_sum_7d capture recent
+  cumulative spending.
+- Geographic behavior: customer_merchant_distance_km, avg_customer_distance
+  and distance_vs_avg compare distance with the card's past activity.
+- Shopping diversity: unique_merchants_7d, unique_categories_7d and
+  unique_categories_30d measure the diversity of past transactions.
+
+These are potential signals, not proof of fraud. Historical features use
+strictly earlier transactions, same-timestamp transactions are excluded.
+"""
+
 from collections import deque
 from pathlib import Path
 from hashlib import sha256
